@@ -530,7 +530,7 @@ vs
 
     say ( $_ * 2 if $_ > 1 for 1, 2, 3 );              # OUTPUT: «(4 6)␤»
 
-For nested loops, the cross product operator C<X>
+For nested loops, the cross product operator L<C<X>|/type/X>
 will help:
 
 =for code :lang<python>

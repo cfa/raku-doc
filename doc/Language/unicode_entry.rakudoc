@@ -373,7 +373,7 @@ C<.XCompose> in C<%USERPROFILE%>, or editing user-defined sequences in the optio
 
 =head2 XTerm
 
-Unicode support is enabled in XTerm primarily by setting its C<utf8> and
+Unicode support is enabled in XTerm primarily by setting its L<C<utf8>|/type/utf8> and
 C<utf8Fonts> options to C<1>, along with its C<locale> option to C<UTF-8>, in
 C<~/.Xdefaults>. Here is a sample configuration that supports displaying enough
 of unicode to program in Raku:

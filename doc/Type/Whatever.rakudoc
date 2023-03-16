@@ -16,7 +16,7 @@ X<|Syntax,Whatever-currying>
 Much of C<*>'s charm comes from I<Whatever-currying>. When C<*> is used
 in term position, that is, as an operand, in combination with most
 operators, the compiler will transform the expression into a closure of
-type L<WhateverCode|/type/WhateverCode>, which is actually a
+type L<C<WhateverCode>|/type/WhateverCode>, which is actually a
 L<C<Block>|/type/Block> that can be used wherever C<Callables> are
 accepted.
 
@@ -38,7 +38,7 @@ Calling a method on C<*> also creates a closure:
 <a b c>.map: *.uc;      # same as    <a b c>.map: -> $char { $char.uc }
 
 As mentioned before, not all operators and syntactic constructs curry
-C<*> (or C<Whatever>-stars) to C<WhateverCode>. In the following cases,
+C<*> (or C<Whatever>-stars) to L<C<WhateverCode>|/type/WhateverCode>. In the following cases,
 C<*> will remain a C<Whatever> object.
 
 =begin table
@@ -55,7 +55,7 @@ C<*> will remain a C<Whatever> object.
 =end table
 
 The range operators are handled specially. They do not curry with
-C<Whatever>-stars, but they do curry with C<WhateverCode>
+C<Whatever>-stars, but they do curry with L<C<WhateverCode>|/type/WhateverCode>
 
     say (1..*).^name;       # OUTPUT: «Range␤»
     say ((1..*-1)).^name;   # OUTPUT: «WhateverCode␤»
@@ -73,7 +73,7 @@ and
 
 Because I<Whatever-currying> is a purely syntactic compiler transform,
 you will get no runtime currying of stored C<Whatever>-stars into
-C<WhateverCode>s.
+L<C<WhateverCode>|/type/WhateverCode>s.
 
 =for code
 my $x = *;
@@ -91,7 +91,7 @@ default.
 my $max    = potential-upper-limit() // *;
 my $series = known-lower-limit() ... $max;
 
-A stored C<*> will also result in the generation of a C<WhateverCode> in
+A stored C<*> will also result in the generation of a L<C<WhateverCode>|/type/WhateverCode> in
 the specific case of smartmatch. Note that this is not actually the
 stored C<*> which is being curried, but rather the C<*> on the left-hand
 side.

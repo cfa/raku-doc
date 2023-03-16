@@ -72,7 +72,7 @@ rather than "(-2)**4)") is also true for Raku.
 As in Perl, unary C<!> and C<-> do logical and arithmetic negation,
 respectively. C<?^> is used for bitwise logical negation, which the
 documentation indicates is equivalent to C<!>. It may be relevant to
-note that these coerce their arguments to C<Bool> and C<Numeric>,
+note that these coerce their arguments to L<C<Bool>|/type/Bool> and L<C<Numeric>|/type/Numeric>,
 respectively.
 
 Unary C<~> is the string context operator in Raku, so use prefix C<+^>
@@ -138,7 +138,7 @@ C<==> and C<!=> both work as in Perl.
 C«<=>» and C<cmp> have different behavior in Raku. C«<=>»
 does a numeric comparison, but returns C<Order::Less>, C<Order::Same>,
 or C<Order::More> instead of Perl's C<-1>, C<0>, or C<1>. To get the
-Perl behavior (with the change that it returns the C<Order> objects,
+Perl behavior (with the change that it returns the L<C<Order>|/type/Order> objects,
 rather than integers) of C<cmp>, you would use the C<leg> operator.
 
 C<cmp> does either C«<=>» or C<leg>, depending on the existing type
@@ -245,7 +245,7 @@ method calls - see L<this page|/language/operators#infix_%3A>.
 
 The C«=>» operator, or I<fat arrow>, works similarly to the Perl "fat
 comma" in that it allows an unquoted (ordinary) identifier on its left side, but
-in Raku constructs L<Pair|/type/Pair> objects, rather than just functioning as a separator.
+in Raku constructs L<C<Pair>|/type/Pair> objects, rather than just functioning as a separator.
 If you are trying to just literally translate a line of Perl code to Raku,
 it should behave as expected.  To read Raku, take a look at
 L<Adverbial Pair|/language/glossary#Adverbial_pair> which will explain a new syntax.
@@ -259,7 +259,7 @@ L<Functions|/language/5to6-perlfunc>.
 =head2 Logical Not
 
 The lower precedence version of C<!>. As with C<!>, coerces its argument
-to C<Bool>.
+to L<C<Bool>|/type/Bool>.
 
 =head2 Logical And
 
@@ -296,8 +296,8 @@ interpolate. E.g. C«@a = <1 2 3>; say qq/@a[] example@example.com/;»
 results in "1 2 3 example@example.com". Hashes interpolate in the same
 manner: C«%a = 1 => 2, 3 => 4;say "%a{}";» results in a space
 separating the pairs and tabs separating the key from the value in each
-pair (because that's the standard stringification of C<Pair>s, and a hash
-acts as list of C<Pair>s when stringified). You can also interpolate Raku
+pair (because that's the standard stringification of L<C<Pair>|/type/Pair>s, and a hash
+acts as list of L<C<Pair>|/type/Pair>s when stringified). You can also interpolate Raku
 code in strings using curly braces. For all the details, see
 L<Interpolation|/language/quoting#Interpolation%3A_qq>.
 
@@ -338,7 +338,7 @@ L<io|/language/io>.
 
 As C«<...>» is the quote-words construct in Raku, C«<>» is not
 used for reading lines from a file. You can do that by either making an
-C<IO> object from a file name or using an open filehandle and then, in
+L<C<IO>|/type/IO> object from a file name or using an open filehandle and then, in
 either case, calling C<.lines> on it. I. e. either C<my @a =
 "filename".IO.lines;> or C<my $fh = open "filename", :r;my @a =
 $fh.lines;> (In the latter case, we are using C<:r> to specifically open
